@@ -164,40 +164,31 @@ if (document.URL.includes("home.html") ) {
 
   for (let i = 0; i < historial.length; i++) {
  
-    const holi = historial[i].tipo;
-    const holi2 = historial[i].concepto;
-    const holi3 = historial[i].monto;
-    const holi4 = historial[i].fecha;
+    const eltipo = historial[i].tipo;
+    const elconcepto = historial[i].concepto;
+    const elmonto = historial[i].monto;
+    const lafecha = historial[i].fecha;
   
   
-    console.log(holi, holi2, holi3, holi4);
+    console.log(eltipo, elconcepto, elmonto, lafecha);
 
     let div = document.createElement("div"); //crea un elemento div
-
     div.id = "Tarjeta" + i; //Asigna un id diferente a cada div
-
     div.classList.add('card', 'mb-3');
-
     document.getElementById("contenedorHistorial").appendChild(div); //Selecciona como se llama el elemento por ese id, y el appenchild agrega un hijo
 
    
    
     let div1 = document.createElement("div"); 
-
     div1.id = "Fila" + i; 
-
     div1.classList.add('row', 'g-0');
-
     document.getElementById("Tarjeta"+i).appendChild(div1); // busco el elemento anterior
     
     
     
     let div2 = document.createElement("div"); 
-
     div2.id = "Columna" + i;
-
     div2.classList.add('col-md-12');
-
     document.getElementById("Fila"+i).appendChild(div2); 
 
 
@@ -209,10 +200,10 @@ if (document.URL.includes("home.html") ) {
     div3.classList.add('card-body');
 
     div3.innerHTML = 
-    "<h5 class='card-title'>"+ "$" + holi3 + "</h5>" +
-    "<p class='card-text'>"+ holi + "</p>" +
-    "<p class='card-text'>" + holi2 +"</p>" +
-    "<p class='card-text'><small class='text-muted'>" + holi4 + "</small></p>";
+    "<h5 class='card-title'>"+ "$" + elmonto + "</h5>" +
+    "<p class='card-text'>"+ eltipo + "</p>" +
+    "<p class='card-text'>" + "Concepto: " + elconcepto +"</p>" +
+    "<p class='card-text'><small class='text-muted'>" + lafecha + "</small></p>";
     
     document.getElementById("Columna"+i).appendChild(div3); 
   
@@ -224,31 +215,3 @@ if (document.URL.includes("home.html") ) {
 
 
 }
-
-
-
-
-
-
-
-// const crearCards = function () {
-//   //limpiamos ontenedor
-//   contenedor_cards.innerHTML = "";
-
-//   datos.map(function (movimientos) {
-//     let card = document.createElement("div");
-//     card.classList = "card mb-3";
-
-//     let contenido_card = `
-//         <div class="card-body">
-//           ${movimientos.tipo}
-//           ${movimientos.concepto}
-//           ${movimientos.fecha}
-//           ${movimientos.monto}
-//         </div> `;
-
-//     card.innerHTML = contenido_card;
-//     contenedor_cards.appendChild(card);
-//   });
-// };
-
