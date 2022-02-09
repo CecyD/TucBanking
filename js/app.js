@@ -1,4 +1,6 @@
-//-----------------------------------REGISTRO
+
+//----------------------------------- REGISTRO --------------------------------------------------
+
 class Usuario {
   constructor(nombre, username, email, contraseña) {
     this.nombre = nombre;
@@ -51,7 +53,7 @@ if (document.getElementById("formulario") != null) {
   });
 }
 
-//-----------------------------------LOGIN
+//----------------------------------- LOGIN ------------------------------------------------
 
 const validarDatos = function () {
   let inputEmail = document.querySelector("#input_email").value;
@@ -97,7 +99,7 @@ if (document.getElementById("formularioDelIndex") != null) {
 }
 
 
-//-------------------MOVIMIENTOS
+//------------------------------------- MOVIMIENTOS --------------------------------------------
 
 class Movimiento {
   constructor(tipo, concepto, fecha, monto) {
@@ -149,7 +151,7 @@ if (document.getElementById("formularioMovimiento") != null) {
 
 //  aaaaaaaaaaaaaaaaaaaaaaaa mi cerebro aaaaaaaaaaaaaaaaa
 
-//-------------------HISTORIAL o sea Home
+//---------------------------------- HISTORIAL - HOME --------------------------------------------
 
 
 let historial = JSON.parse(localStorage.movimientos) || [];
@@ -177,14 +179,14 @@ if (document.URL.includes("home.html")) {
 
     let div1 = document.createElement("div");
     div1.id = "Fila" + i;
-    div1.classList.add('row', 'g-0');
+    div1.classList.add('row');
     document.getElementById("Tarjeta" + i).appendChild(div1); // busco el elemento anterior
 
 
 
     let div2 = document.createElement("div");
     div2.id = "Columna" + i;
-    div2.classList.add('col-md-12');
+    div2.classList.add('col-12');
     document.getElementById("Fila" + i).appendChild(div2);
 
 
@@ -196,10 +198,10 @@ if (document.URL.includes("home.html")) {
     div3.classList.add('card-body');
 
     div3.innerHTML =
-      "<h5 class='card-title'>" + "$" + elmonto + "</h5>" +
-      "<p class='card-text'>" + eltipo + "</p>" +
-      "<p class='card-text'>" + "Concepto: " + elconcepto + "</p>" +
-      "<p class='card-text'><small class='text-muted'>" + lafecha + "</small></p>";
+      "<h5 class='card-title text-center'>" + "$" + elmonto + "</h5>" +
+      "<p class='card-text text-center'>" + eltipo + "</p>" +
+      "<p class='card-text text-center'>" + "Concepto: " + elconcepto + "</p>" +
+      "<p class='card-text text-center'><small class='text-muted'>" + lafecha + "</small></p>";
 
     document.getElementById("Columna" + i).appendChild(div3);
 
@@ -210,3 +212,19 @@ if (document.URL.includes("home.html")) {
   NombreDeUsuario.innerHTML += " " + JSON.parse(localStorage.usuarioLogeado) + "!";
 
 }
+
+// -------------------------------------------------------------------------------------------------
+
+let botonVolver = document.querySelector('#button_volver').addEventListener('click', volverHome);
+
+function volverHome(e) {
+
+  console.log(e);
+
+  location.replace("./home.html");
+
+}
+
+
+
+

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <link rel="shortcut icon" href="favicon.png" type="image/png" /> -->
     <!-- LA LINEA DE ABAJO ES EL CSS DE BOOTSTRAP -->
+    <link rel="stylesheet" href="../css/style.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,27 +15,31 @@
     <title>TucBanking Registro</title>
   </head>
 
-  <body>
-    <div class="container d-flex justify-content-center align-items-center">
+  <body class="body_registro">
+
+    <div class="container">
       <div class="row">
-        <div class="col-md-5 d-md-block img-card">
+
+        <div class="col-12 col-md-6 col-lg-6 img-card">
           <img
-            src="https://i.pinimg.com/originals/86/e9/9c/86e99c4cdad940a3dca5d7ed824d4042.png"
+            src="https://laopinion.com/wp-content/uploads/sites/3/2020/01/packs-163497_1280.jpg?quality=60&strip=all&w=1200"
             alt="registro"
+            class="img_registro"
           />
         </div>
-        <div class="col-md-5">
+
+        <div class="col-12 col-md-6 col-lg-6">
           <div class="card">
             <div class="card-body">
               <div class="text-center">
                 <h3>TucBanking</h3>
                 <p class="text-muted">
-                  Registrate para hacer lo que hace esta web que no se que hace
+                  Registrate para obtener tu presupuesto
                 </p>
               </div>
 
               <form class="needs-validation" novalidate id="formulario">
-                <div class="mb-2">
+                <div class="mb-3">
                   <input
                     type="email"
                     class="form-control"
@@ -43,7 +48,7 @@
                     required
                   />
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                   <input
                     type="text"
                     class="form-control"
@@ -52,7 +57,7 @@
                     required
                   />
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                   <input
                     type="text"
                     class="form-control"
@@ -61,7 +66,7 @@
                     required
                   />
                 </div>
-                <div class="mb-2">
+                <div class="mb-3">
                   <input
                     type="password"
                     class="form-control"
@@ -71,7 +76,7 @@
                   />
                 </div>
                 <div class="d-grid mt-3">
-                  <button class="btn btn-primary" type="submit">
+                  <button class="btn btn-success" type="submit">
                     Registrarte
                   </button>
                   <p class="text-muted text-center mt-2">
@@ -84,7 +89,7 @@
                 <hr />
                 <span
                   >Si ya estás registrado, ingresa
-                  <a href="../index.html">aquí</a>
+                  <a class="link_registro" href="../index.html">aquí</a>
                 </span>
               </div>
             </div>
