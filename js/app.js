@@ -101,129 +101,140 @@ if (document.getElementById("formularioDelIndex") != null) {
 
 //------------------------------------- MOVIMIENTOS --------------------------------------------
 
-class Movimiento {
-  constructor(tipo, concepto, fecha, monto) {
-    this.tipo = tipo;
-    this.concepto = concepto;
-    this.fecha = fecha;
-    this.monto = monto;
-  }
-}
+// class Movimiento {
+//   constructor(tipo, concepto, fecha, monto) {
+//     this.tipo = tipo;
+//     this.concepto = concepto;
+//     this.fecha = fecha;
+//     this.monto = monto;
+//   }
+// }
 
-let movimientos = [];
+// let movimientos = [];
 
-const agregarMovimiento = function () {
-  let inputTipo = document.querySelector("#input_tipo").value;
-  let inputConcepto = document.querySelector("#input_concepto").value;
-  let inputFecha = document.querySelector("#input_fecha").value;
-  let inputMonto = document.querySelector("#input_monto").value;
+// const agregarMovimiento = function () {
+//   let inputTipo = document.querySelector("#input_tipo").value;
+//   let inputConcepto = document.querySelector("#input_concepto").value;
+//   let inputFecha = document.querySelector("#input_fecha").value;
+//   let inputMonto = document.querySelector("#input_monto").value;
 
 
-  if (localStorage.movimientos != null) {
-    movimientos = JSON.parse(localStorage.movimientos);
-  }
+//   if (localStorage.movimientos != null) {
+//     movimientos = JSON.parse(localStorage.movimientos);
+//   }
 
-  let cuenta = {
-    tipo: inputTipo,
-    concepto: inputConcepto,
-    fecha: inputFecha,
-    monto: inputMonto
-  }
+//   let cuenta = {
+//     tipo: inputTipo,
+//     concepto: inputConcepto,
+//     fecha: inputFecha,
+//     monto: inputMonto
+//   }
 
-  if (inputConcepto == "" || inputFecha == "" || inputMonto == "") {
-    alert("Debe completar todos los campos");
-  } else {
-    movimientos.push(cuenta);
+//   if (inputConcepto == "" || inputFecha == "" || inputMonto == "") {
+//     alert("Debe completar todos los campos");
+//   } else {
+//     movimientos.push(cuenta);
 
-    localStorage.setItem("movimientos", JSON.stringify(movimientos));
+//     localStorage.setItem("movimientos", JSON.stringify(movimientos));
 
-    location.replace("./home.html");
-  }
+//     location.replace("./home.html");
+//   }
 
-}
+// }
 
-if (document.getElementById("formularioMovimiento") != null) {
-  document.querySelector("#formularioMovimiento").addEventListener("submit", function (e) {
-    e.preventDefault();
-    agregarMovimiento();
-  });
-}
+// if (document.getElementById("formularioMovimiento") != null) {
+//   document.querySelector("#formularioMovimiento").addEventListener("submit", function (e) {
+//     e.preventDefault();
+//     agregarMovimiento();
+//   });
+// }
 
 //  aaaaaaaaaaaaaaaaaaaaaaaa mi cerebro aaaaaaaaaaaaaaaaa
+
+// let botonVolver = document.querySelector('#button_volver').addEventListener('click', volverHome);
+
+// function volverHome(e) {
+
+//     console.log(e);
+
+//     location.replace("./home.html");
+
+// }
 
 //---------------------------------- HISTORIAL - HOME --------------------------------------------
 
 
-let historial = JSON.parse(localStorage.movimientos) || [];
+// let historial = JSON.parse(localStorage.movimientos) || [];
 
 
-if (document.URL.includes("home.html")) {
-  console.log("Estoy en el home");
+// if (document.URL.includes("home.html")) {
+//   console.log("Estoy en el home");
 
-  for (let i = 0; i < historial.length; i++) {
+//   for (let i = 0; i < historial.length; i++) {
 
-    const eltipo = historial[i].tipo;
-    const elconcepto = historial[i].concepto;
-    const elmonto = historial[i].monto;
-    const lafecha = historial[i].fecha;
-
-
-    console.log(eltipo, elconcepto, elmonto, lafecha);
-
-    let div = document.createElement("div"); //crea un elemento div
-    div.id = "Tarjeta" + i; //Asigna un id diferente a cada div
-    div.classList.add('card', 'mb-3');
-    document.getElementById("contenedorHistorial").appendChild(div); //Selecciona como se llama el elemento por ese id, y el appenchild agrega un hijo
+//     const eltipo = historial[i].tipo;
+//     const elconcepto = historial[i].concepto;
+//     const elmonto = historial[i].monto;
+//     const lafecha = historial[i].fecha;
 
 
+//     console.log(eltipo, elconcepto, elmonto, lafecha);
 
-    let div1 = document.createElement("div");
-    div1.id = "Fila" + i;
-    div1.classList.add('row');
-    document.getElementById("Tarjeta" + i).appendChild(div1); // busco el elemento anterior
+//     let div = document.createElement("div"); //crea un elemento div
+//     div.id = "Tarjeta" + i; //Asigna un id diferente a cada div
+//     div.classList.add('card', 'mb-3');
+//     document.getElementById("contenedorHistorial").appendChild(div); //Selecciona como se llama el elemento por ese id, y el appenchild agrega un hijo
 
 
 
-    let div2 = document.createElement("div");
-    div2.id = "Columna" + i;
-    div2.classList.add('col-12');
-    document.getElementById("Fila" + i).appendChild(div2);
+//     let div1 = document.createElement("div");
+//     div1.id = "Fila" + i;
+//     div1.classList.add('row');
+//     document.getElementById("Tarjeta" + i).appendChild(div1); // busco el elemento anterior
 
 
 
-    let div3 = document.createElement("div");
+//     let div2 = document.createElement("div");
+//     div2.id = "Columna" + i;
+//     div2.classList.add('col-12');
+//     document.getElementById("Fila" + i).appendChild(div2);
 
-    div3.id = "Cuerpo" + i;
 
-    div3.classList.add('card-body');
 
-    div3.innerHTML =
-      "<h5 class='card-title text-center'>" + "$" + elmonto + "</h5>" +
-      "<p class='card-text text-center'>" + eltipo + "</p>" +
-      "<p class='card-text text-center'>" + "Concepto: " + elconcepto + "</p>" +
-      "<p class='card-text text-center'><small class='text-muted'>" + lafecha + "</small></p>";
+//     let div3 = document.createElement("div");
 
-    document.getElementById("Columna" + i).appendChild(div3);
+//     div3.id = "Cuerpo" + i;
 
-  }
+//     div3.classList.add('card-body');
 
-  let NombreDeUsuario = document.getElementById('NombreDeUsuario');
+//     div3.innerHTML =
+//       "<h5 class='card-title text-center'>" + "$" + elmonto + "</h5>" +
+//       "<p class='card-text text-center'>" + eltipo + "</p>" +
+//       "<p class='card-text text-center'>" + "Concepto: " + elconcepto + "</p>" +
+//       "<p class='card-text text-center'><small class='text-muted'>" + lafecha + "</small></p>";
 
-  NombreDeUsuario.innerHTML += " " + JSON.parse(localStorage.usuarioLogeado) + "!";
+//     document.getElementById("Columna" + i).appendChild(div3);
 
-}
+//   }
+
+//   //Donde debe ir el monto del presupuesto le asigno la función
+//   texto_presupuesto.innerHTML = calcularPresupuesto(historial);
+
+//   //donde se colocará la fecha del último movimiento
+//   let ultimoMov = document.querySelector('#last_movimiento')
+//   ultimoMov.innerHTML = historial[historial.length - 1].fecha.split("-").reverse().join("-");
+
+//   let NombreDeUsuario = document.getElementById('NombreDeUsuario');
+
+//   NombreDeUsuario.innerHTML += " " + JSON.parse(localStorage.usuarioLogeado) + "!";
+
+// }
 
 // -------------------------------------------------------------------------------------------------
 
-let botonVolver = document.querySelector('#button_volver').addEventListener('click', volverHome);
 
-function volverHome(e) {
 
-  console.log(e);
 
-  location.replace("./home.html");
-
-}
 
 
 
