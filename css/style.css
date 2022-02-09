@@ -45,20 +45,26 @@
 
 .body_registro {
   min-height: 100vh;
-  background: linear-gradient(120deg, #6fbc6d, #47535b);
+  background: linear-gradient(120deg, #041e43, #a99260);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.button_registro {
+  background-color: #a99260 !important;
+  color: #000 !important;
+  font-weight: 500 !important;
+}
+
 .link_registro {
   text-decoration: none;
-  color: #2f7446;
+  color: #a38b56;
   font-weight: 600;
 }
 
 .link_registro:hover {
-  color: #000;
+  color: #4b3a16;
 }
 
 .img_registro {
@@ -72,29 +78,49 @@
 .body_movimiento {
   min-height: 100vh;
   background: linear-gradient(
-    45deg,
-    #949483,
-    #f47b7b,
-    #9f1f5c,
-    #ef9020,
-    #00af3e,
-    #85b7e2
+    120deg,
+    #ff8e00,
+    #000000,
+    #955214,
+    #55601c,
+    #005172
   );
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+.card_movi {
+  background-color: #3332;
+}
+
+.title_movimiento {
+  font-size: 2.3rem;
 }
 
 .parrafo_movimiento {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
-.carousel-inner img {
-  height: 300px;
+.section_carousel {
   width: 100%;
+}
+.carousel-inner img {
+  height: 50vh;
   object-fit: cover;
-  object-position: center;
+}
+
+.label_mov {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.button_mov {
+  background-color: #a99260 !important;
+  color: #fff !important;
 }
 
 /* ---------------------------------------- Pagina Home ---------------------------------------- */
@@ -104,10 +130,11 @@
   background-color: #3332;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 header .navbar {
-  background-color: #2f7446;
+  background: linear-gradient(120deg, #041e43, #a99260);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -130,11 +157,11 @@ header .navbar {
 }
 
 .title_home {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
-/* ------------------------------------------------------------------------------------------- */
+/* -------------------------------------- media queries ------------------------------------------- */
 
 @media screen and (min-width: 320px) and (max-width: 576px) {
   header .navbar {
@@ -166,7 +193,31 @@ header .navbar {
   .button1 {
     margin-bottom: 10px;
   }
+
+  .parrafo_index {
+    font-size: 0.8rem;
+  }
+
+  .login_link {
+    font-size: 0.9rem;
+  }
+
+  .title_movimiento {
+    font-size: 2rem;
+  }
+
+  .parrafo_movimiento {
+    font-size: 1rem;
+  }
+
+  .card_movi {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
+
+/* --------------------------------------------------------------------------------------------------- */
 
 @media screen and (min-width: 577px) and (max-width: 768px) {
   .navbar a img {
@@ -189,5 +240,19 @@ header .navbar {
 
   .button1 {
     margin-bottom: 10px;
+  }
+
+  .card_movi {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title_movimiento {
+    font-size: 2rem;
+  }
+
+  .parrafo_movimiento {
+    font-size: 1.1rem;
   }
 }

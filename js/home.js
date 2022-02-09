@@ -1,8 +1,6 @@
 //---------------------------------- HISTORIAL - HOME --------------------------------------------
 
-
 let historial = JSON.parse(localStorage.movimientos) || [];
-
 
 if (document.URL.includes("home.html")) {
 
